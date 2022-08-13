@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Человек</title>
+</head>
+<body>
+<div th:object="${person}">
+    <p th:text="*{id}">VALUE</p>
+    <p th:text="*{name}">VALUE</p>
+    <p th:text="*{age}">VALUE</p>
+    <p th:text="*{email}">VALUE</p>
+    <a th:href="@{/people/{id}/edit (id=*{id})}">Update</a>
+    <form th:method="delete" th:action="@{/people/{id}(id=*{id})}">
+        <input type="submit" value="DELETE!!!!!"/>
+    </form>
+</div>
+</body>
+</html>
